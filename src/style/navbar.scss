@@ -1,0 +1,17 @@
+.nav-bar {
+  display: flex;
+  gap: 0.8rem;
+
+  .nav-links {
+    text-transform: uppercase;
+    font-size: 12px;
+    @media (min-width: 768px) {
+      text-transform: none;
+      font-size: 24px;
+    }
+  }
+
+  @media (min-width: 768px) {
+    gap: 3rem;
+  }
+}

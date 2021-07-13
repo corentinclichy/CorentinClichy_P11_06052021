@@ -1,11 +1,15 @@
 import React, { Component } from "react";
-import "../style/main.css";
+import "../style/main.scss";
+
+import Banner from "./Banner";
+import Content from "./Content";
 
 export class Main extends Component {
   render() {
     return (
       <main>
-        <h1>Hello World</h1>
+        <Banner />
+        <Content />
       </main>
     );
   }
