@@ -3,30 +3,26 @@ import React, { Component } from "react";
 import "../style/dropdown.scss";
 
 export class DropDown extends Component {
+  constructor(props) {
+    super(props);
+    this.description = this.props.description;
+    this.equipments = this.props.equipments;
+  }
+
   render() {
     const isDescription = this.props.isDescription;
     let description;
     let name;
 
     if (isDescription) {
-      description = (
-        <p>
-          La bienveillance fait partie des valeurs fondatrices de Kasa. Tout
-          comportement discriminatoire ou de perturbation du voisinage
-          entraînera une exclusion de notre plateforme.
-        </p>
-      );
+      description = <p>{this.props.description}</p>;
       name = "Description";
     } else {
       description = (
         <ul className="content__list">
-          <li>Climatisation</li>
-          <li>Cintres</li>
-          <li>Wi-Fi</li>
-          <li>Cuisine</li>
-          <li>Espace de travail</li>
-          <li>Fer à repasser</li>
-          <li>Sèche-cheveux</li>
+          {this.equipments.map((equipment) => (
+            <li key={equipment}>{equipment}</li>
+          ))}
         </ul>
       );
       name = "Equipement";

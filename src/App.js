@@ -1,11 +1,14 @@
 import React, { Component } from "react";
+import { Route, Switch } from "react-router-dom";
+
 import "./App.scss";
+
 import Header from "./components/Header";
 import Main from "./components/Main";
 import About from "./components/About";
 import Error from "./components/Error";
 import Footer from "./components/Footer";
-import { Route, Switch } from "react-router-dom";
+
 import House from "./components/House";
 
 class App extends Component {
@@ -17,9 +20,7 @@ class App extends Component {
           <Switch>
             <Route path="/" component={Main} exact />
             <Route path="/about" component={About} />
-            <Route path="/house/">
-              <House />
-            </Route>
+            <Route path="/house/:id" component={House} />
             <Route component={Error} />
           </Switch>
         </div>

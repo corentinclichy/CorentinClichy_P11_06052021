@@ -3,6 +3,7 @@ import "../style/carrousel.scss";
 
 export class Carrousel extends Component {
   render() {
+    console.log(this.props);
     return (
       <div className="carrousel">
         <img

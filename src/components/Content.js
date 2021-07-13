@@ -14,16 +14,17 @@ export class Content extends Component {
     };
   }
 
-  componentDidMount() {}
-
-  componentDidUnmount() {}
-
   render() {
     return (
       <div className="showcase">
         {this.state.data.map((item, index) => {
           return (
-            <Link to={`/house/${item.id}`}>
+            <Link
+              to={{
+                pathname: `/house/${item.id}`,
+                state: { data: item },
+              }}
+            >
               <HouseCard key={index} data={{ ...item }} />
             </Link>
           );
