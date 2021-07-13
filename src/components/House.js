@@ -26,8 +26,6 @@ export class House extends Component {
   }
 
   render() {
-    console.log(this.state.data);
-    console.log(this.profilePicUrl);
     return (
       <div className="house">
         <div className="house__image">

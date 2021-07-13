@@ -13,10 +13,18 @@
     }
   }
 
-  img {
+  .carrousel-image {
     width: 100%;
     height: 100%;
-    object-fit: cover;
+    display: flex;
+    .slide {
+      height: 100%;
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    }
   }
 
   .chevron-left {
@@ -25,6 +33,8 @@
     left: 10px;
     top: 50%;
     transform: translateY(-50%);
+    cursor: pointer;
+    user-select: none;
   }
   .chevron-right {
     width: fit-content;
@@ -32,6 +42,8 @@
     right: 10px;
     top: 50%;
     transform: translateY(-50%);
+    cursor: pointer;
+    user-select: none;
     svg {
       transform: rotate(-90deg);
     }

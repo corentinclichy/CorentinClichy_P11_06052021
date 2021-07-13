@@ -2,15 +2,58 @@ import React, { Component } from "react";
 import "../style/carrousel.scss";
 
 export class Carrousel extends Component {
+  constructor(props) {
+    super(props);
+    this.pictures = this.props.pictures;
+    this.picturesLength = this.pictures.length;
+    this.state = {
+      activeIndex: 0,
+    };
+  }
+
+  goNextPicture() {
+    console.log("Click right chevron");
+
+    this.state.activeIndex === this.picturesLength - 1
+      ? this.setState({ activeIndex: 0 })
+      : this.setState({ activeIndex: this.state.activeIndex + 1 });
+
+    console.log(this.state.activeIndex);
+  }
+
+  goPreviousPicture() {
+    console.log(this.state.activeIndex);
+    console.log(this.state.activeIndex === 0);
+    this.state.activeIndex === 0
+      ? this.setState({ activeIndex: this.picturesLength - 1 })
+      : this.setState({ activeIndex: this.state.activeIndex - 1 });
+    console.log(this.state.activeIndex);
+  }
+
   render() {
-    console.log(this.props);
+    if (!Array.isArray(this.pictures) || this.pictures.length === 0) {
+      return null;
+    }
+
     return (
       <div className="carrousel">
-        <img
-          src="https://s3-eu-west-1.amazonaws.com/course.oc-static.com/projects/front-end-kasa-project/accommodation-20-1.jpg"
-          alt=""
-        />
-        <div className="chevron-left">
+        <div className="carrousel-image">
+          {this.pictures.map((picture, index) => {
+            return (
+              <div
+                className={
+                  index === this.state.activeIndex ? "slide active" : "slide"
+                }
+                key={index}
+              >
+                {index === this.state.activeIndex && (
+                  <img src={picture} alt={picture} key={index} />
+                )}
+              </div>
+            );
+          })}
+        </div>
+        <div className="chevron-left" onClick={() => this.goPreviousPicture()}>
           <svg
             width="16"
             height="10"
@@ -24,7 +67,7 @@ export class Carrousel extends Component {
             />
           </svg>
         </div>
-        <div className="chevron-right">
+        <div className="chevron-right" onClick={() => this.goNextPicture()}>
           <svg
             width="16"
             height="10"
