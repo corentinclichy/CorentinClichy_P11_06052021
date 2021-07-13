@@ -2,12 +2,6 @@ import React, { Component } from "react";
 import "../style/houseCard.scss";
 
 export class HouseCard extends Component {
-  //create constructor
-  constructor(props) {
-    super(props);
-    console.log(props);
-  }
-
   render() {
     return (
       <div className="house-card">

@@ -1,16 +1,18 @@
 import React, { Component } from "react";
 import "../style/navbar.scss";
 
+import { Link } from "react-router-dom";
+
 export class Navbar extends Component {
   render() {
     return (
       <nav className="nav-bar">
-        <a className="nav-links" href="#">
+        <Link className="nav-links" to="/">
           Accueil
-        </a>
-        <a href="#" className="nav-links">
+        </Link>
+        <Link to="/about" className="nav-links">
           A propos
-        </a>
+        </Link>
       </nav>
     );
   }

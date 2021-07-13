@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import "../style/content.scss";
 import HouseCard from "./HouseCard";
 import { data } from "../data/data";
+import { Link } from "react-router-dom";
 
 export class Content extends Component {
   //create a constructor with different state for each instance
@@ -21,7 +22,11 @@ export class Content extends Component {
     return (
       <div className="showcase">
         {this.state.data.map((item, index) => {
-          return <HouseCard key={index} data={{ ...item }} />;
+          return (
+            <Link to={`/house/${item.id}`}>
+              <HouseCard key={index} data={{ ...item }} />;
+            </Link>
+          );
         })}
       </div>
     );
