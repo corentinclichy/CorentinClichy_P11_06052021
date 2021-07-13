@@ -1,0 +1,111 @@
+.house {
+  margin-top: 1rem;
+  .house__image {
+    width: 100%;
+    height: 250px;
+    background-color: rgb(221, 166, 94);
+    border-radius: 10px;
+    overflow: hidden;
+    @media (min-width: 768px) {
+      height: 400px;
+    }
+  }
+
+  .house__infos-wrapper {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(3, auto-fit);
+    grid-column-gap: 0px;
+    grid-row-gap: 0px;
+    align-items: center;
+
+    @media (min-width: 1024px) {
+      grid-template-columns: 1fr auto;
+      grid-template-rows: repeat(2, 1fr);
+    }
+
+    .house__infos {
+      grid-area: 1 / 1 / 2 / 5;
+      margin-top: 1rem;
+      @media (min-width: 1024px) {
+        grid-area: 1 / 1 / 2 / 2;
+      }
+      h1 {
+        font-size: 18px;
+        font-weight: 500;
+        @media (min-width: 768px) {
+          font-size: 24px;
+        }
+      }
+      p {
+        font-size: 14px;
+        margin-top: 5px;
+        @media (min-width: 768px) {
+          font-size: 16px;
+        }
+      }
+    }
+
+    .house__tags {
+      grid-area: 2 / 1 / 3 / 5;
+      margin-top: 1rem;
+      display: flex;
+      gap: 0.3rem;
+      @media (min-width: 1024px) {
+        grid-area: 2 / 1 / 3 / 2;
+        margin-top: 0;
+      }
+    }
+
+    .house__notation {
+      margin-top: 1rem;
+      grid-area: 3 / 1 / 4 / 3;
+      @media (min-width: 1024px) {
+        grid-area: 2 / 2 / 3 / 3;
+        margin-top: 0;
+      }
+    }
+
+    .house__ownerInfos {
+      grid-area: 3 / 3 / 4 / 5;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      justify-self: right;
+      margin-top: 1rem;
+      @media (min-width: 1024px) {
+        grid-area: 1 / 2 / 2 / 3;
+      }
+
+      .ownerInfos__name {
+        display: flex;
+        flex-direction: column;
+        font-size: 12px;
+        @media (min-width: 768px) {
+          font-size: 16px;
+        }
+        p {
+          text-align: right;
+          margin: 0;
+        }
+      }
+
+      .house__owner__profilePicture {
+        width: 32px;
+        height: 32px;
+        border-radius: 50%;
+        background-color: gray;
+        @media (min-width: 768px) {
+          width: 60px;
+          height: 60px;
+        }
+      }
+    }
+  }
+
+  .house__dropdown-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    column-gap: 20px;
+  }
+}

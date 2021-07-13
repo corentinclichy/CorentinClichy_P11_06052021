@@ -1,0 +1,30 @@
+.error {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  height: 59vh;
+  text-align: center;
+  @media (min-width: 768px) {
+    height: 56vh;
+  }
+  .wrap {
+    h1 {
+      font-size: 96px;
+      font-weight: 700;
+      @media (min-width: 768px) {
+        font-size: 200px;
+      }
+    }
+    p {
+      margin-top: 10px;
+      font-size: 18px;
+      font-weight: 500;
+    }
+  }
+
+  .error__link {
+    font-size: 14px;
+    font-weight: 500;
+    text-decoration: underline;
+  }
+}

@@ -1,0 +1,15 @@
+.notation {
+  width: 100%;
+  svg {
+    fill: #e3e3e3;
+    margin-right: 5px;
+    @media (min-width: 768px) {
+      width: 30px;
+      height: 30px;
+    }
+  }
+
+  .fill {
+    fill: #ff6060;
+  }
+}

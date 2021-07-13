@@ -1,11 +1,9 @@
-.header {
+header {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding-top: 1.5rem;
-  @media (min-width: 768px) {
-    padding-top: 3rem;
-  }
+  align-items: center;
+  height: 15vh;
 
   .logo {
     width: 100px;

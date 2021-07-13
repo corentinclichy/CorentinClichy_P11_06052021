@@ -24,7 +24,7 @@ export class Content extends Component {
         {this.state.data.map((item, index) => {
           return (
             <Link to={`/house/${item.id}`}>
-              <HouseCard key={index} data={{ ...item }} />;
+              <HouseCard key={index} data={{ ...item }} />
             </Link>
           );
         })}
