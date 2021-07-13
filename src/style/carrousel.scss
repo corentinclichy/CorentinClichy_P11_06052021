@@ -19,11 +19,19 @@
     display: flex;
     .slide {
       height: 100%;
+      opacity: 0;
+      transition: all 0.3s ease-in-out;
       img {
         width: 100%;
         height: 100%;
         object-fit: cover;
       }
+    }
+
+    .slide.active {
+      opacity: 1;
+      transition: all 0.3s ease-in-out;
+      transform: scale(1.01);
     }
   }
 
