@@ -12,22 +12,15 @@ export class Carrousel extends Component {
   }
 
   goNextPicture() {
-    console.log("Click right chevron");
-
     this.state.activeIndex === this.picturesLength - 1
       ? this.setState({ activeIndex: 0 })
       : this.setState({ activeIndex: this.state.activeIndex + 1 });
-
-    console.log(this.state.activeIndex);
   }
 
   goPreviousPicture() {
-    console.log(this.state.activeIndex);
-    console.log(this.state.activeIndex === 0);
     this.state.activeIndex === 0
       ? this.setState({ activeIndex: this.picturesLength - 1 })
       : this.setState({ activeIndex: this.state.activeIndex - 1 });
-    console.log(this.state.activeIndex);
   }
 
   render() {

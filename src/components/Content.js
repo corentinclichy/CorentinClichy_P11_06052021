@@ -24,8 +24,9 @@ export class Content extends Component {
                 pathname: `/house/${item.id}`,
                 state: { data: item },
               }}
+              key={item.id}
             >
-              <HouseCard key={index} data={{ ...item }} />
+              <HouseCard key={item.id} data={{ ...item }} />
             </Link>
           );
         })}

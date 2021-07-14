@@ -3,7 +3,10 @@ header {
   align-items: center;
   justify-content: space-between;
   align-items: center;
-  height: 15vh;
+  height: 8vh;
+  @media (min-width: 768px) {
+    height: 15vh;
+  }
 
   .logo {
     width: 100px;
