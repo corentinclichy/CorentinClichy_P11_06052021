@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
-import "../style/error.scss";
+import "../../style/error.scss";
 
 export class Error extends Component {
   render() {

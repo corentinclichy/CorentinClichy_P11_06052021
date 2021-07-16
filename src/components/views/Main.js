@@ -1,8 +1,8 @@
 import React, { Component } from "react";
-import "../style/main.scss";
+import "../../style/main.scss";
 
-import Banner from "./Banner";
-import Content from "./Content";
+import Banner from "../commons/Banner";
+import Content from "../commons/Content";
 
 export class Main extends Component {
   render() {

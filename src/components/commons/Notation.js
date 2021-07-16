@@ -1,8 +1,10 @@
 import React, { Component } from "react";
-import "../style/notation.scss";
+import "../../style/notation.scss";
 
 export class Notation extends Component {
   render() {
+
+    console.log(this.props);
     return (
       <div className="notation">
         <svg

@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import "../style/tag.scss";
+import "../../style/tag.scss";
 
 export class Tag extends Component {
   render() {

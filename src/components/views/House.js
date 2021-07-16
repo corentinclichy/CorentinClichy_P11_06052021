@@ -1,11 +1,11 @@
 import React, { Component } from "react";
 
-import Tag from "./Tag";
-import Carrousel from "./Carrousel";
-import Dropdown from "./DropDown";
-import Notation from "./Notation";
+import Tag from "../commons/Tag";
+import Carrousel from "../commons/Carrousel";
+import Dropdown from "../commons/DropDown";
+import Notation from "../commons/Notation";
 
-import "../style/house.scss";
+import "../../style/house.scss";
 
 export class House extends Component {
   constructor(props) {
@@ -26,40 +26,51 @@ export class House extends Component {
   }
 
   render() {
+    const {
+      pictures,
+      title,
+      location,
+      tags,
+      rating,
+      host,
+      description,
+      equipments,
+    } = this.state.data;
+
     return (
       <div className="house">
         <div className="house__image">
-          <Carrousel pictures={this.pictures} />
+          <Carrousel pictures={pictures} />
         </div>
         <div className="house__infos-wrapper">
           <div className="house__infos">
-            <h1>{this.title}</h1>
-            <p>{this.location}</p>
+            <h1>{title}</h1>
+            <p>{location}</p>
           </div>
           <div className="house__tags">
-            {this.tags.map((tag) => (
+            {tags.map((tag) => (
               <Tag key={tag} tag={tag} />
             ))}
           </div>
 
           <div className="house__notation">
-            <Notation rating={this.rating} />
+            <Notation rating={rating} />
           </div>
 
           <div className="house__ownerInfos">
             <div className="ownerInfos__name">
-              <p>{this.firstName}</p>
-              <p>{this.lastName}</p>
+              <p>{host.name.split(" ")[0]}</p>
+              <p>{host.name.split(" ")[1]}</p>
             </div>
             <div className="house__owner__profilePicture">
-              <img src={this.profilePicUrl} alt="" />
+              <img src={host.picture} alt="" />
             </div>
           </div>
         </div>
 
         <div className="house__dropdown-container">
-          <Dropdown equipments={this.equipments} />
-          <Dropdown isDescription description={this.description} />
+          <Dropdown equipments={equipments} />
+          <Dropdown isDescription description={description} />
         </div>
       </div>
     );

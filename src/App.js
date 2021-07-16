@@ -3,13 +3,13 @@ import { Route, Switch } from "react-router-dom";
 
 import "./App.scss";
 
-import Header from "./components/Header";
-import Main from "./components/Main";
-import About from "./components/About";
-import Error from "./components/Error";
-import Footer from "./components/Footer";
+import Header from "./components/commons/Header";
+import Main from "./components/views/Main";
+import About from "./components/views/About";
+import Error from "./components/views/Error";
+import Footer from "./components/commons/Footer";
 
-import House from "./components/House";
+import House from "./components/views/House";
 
 class App extends Component {
   render() {

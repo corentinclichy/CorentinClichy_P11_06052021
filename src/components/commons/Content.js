@@ -1,23 +1,23 @@
 import React, { Component } from "react";
-import "../style/content.scss";
+import "../../style/content.scss";
 import HouseCard from "./HouseCard";
-import { data } from "../data/data";
+import { data } from "../../data/data";
 import { Link } from "react-router-dom";
 
 export class Content extends Component {
-  //create a constructor with different state for each instance
   constructor(props) {
     super(props);
     this.state = {
       data: data,
-      name: "corentin",
     };
   }
 
   render() {
+    const { data } = this.state;
+
     return (
       <div className="showcase">
-        {this.state.data.map((item, index) => {
+        {data.map((item, index) => {
           return (
             <Link
               to={{

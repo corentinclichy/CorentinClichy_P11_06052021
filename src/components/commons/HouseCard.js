@@ -1,12 +1,13 @@
 import React, { Component } from "react";
-import "../style/houseCard.scss";
+import "../../style/houseCard.scss";
 
 export class HouseCard extends Component {
   render() {
+    const { data } = this.props;
     return (
       <div className="house-card">
-        <img src={this.props.data.cover} alt="" />
-        <p>{this.props.data.title}</p>
+        <img src={data.cover} alt="" />
+        <p>{data.title}</p>
       </div>
     );
   }

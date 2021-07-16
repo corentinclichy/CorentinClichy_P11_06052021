@@ -1,45 +1,47 @@
 import React, { Component } from "react";
-import "../style/carrousel.scss";
+import "../../style/carrousel.scss";
 
 export class Carrousel extends Component {
   constructor(props) {
     super(props);
-    this.pictures = this.props.pictures;
-    this.picturesLength = this.pictures.length;
     this.state = {
       activeIndex: 0,
     };
   }
 
   goNextPicture() {
-    this.state.activeIndex === this.picturesLength - 1
+    this.state.activeIndex === this.props.pictures.length - 1
       ? this.setState({ activeIndex: 0 })
       : this.setState({ activeIndex: this.state.activeIndex + 1 });
   }
 
   goPreviousPicture() {
     this.state.activeIndex === 0
-      ? this.setState({ activeIndex: this.picturesLength - 1 })
+      ? this.setState({ activeIndex: this.props.pictures.length - 1 })
       : this.setState({ activeIndex: this.state.activeIndex - 1 });
   }
 
   render() {
-    if (!Array.isArray(this.pictures) || this.pictures.length === 0) {
+    if (
+      !Array.isArray(this.props.pictures) ||
+      this.props.pictures.length === 0
+    ) {
       return null;
     }
+
+    const { pictures } = this.props;
+    const { activeIndex } = this.state;
 
     return (
       <div className="carrousel">
         <div className="carrousel-image">
-          {this.pictures.map((picture, index) => {
+          {pictures.map((picture, index) => {
             return (
               <div
-                className={
-                  index === this.state.activeIndex ? "slide active" : "slide"
-                }
+                className={index === activeIndex ? "slide active" : "slide"}
                 key={index}
               >
-                {index === this.state.activeIndex && (
+                {index === activeIndex && (
                   <img src={picture} alt={picture} key={index} />
                 )}
               </div>

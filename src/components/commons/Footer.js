@@ -1,6 +1,6 @@
 import React, { Component } from "react";
-import "../style/footer.scss";
-import Logo from "../assets/LogoKasa_white.svg";
+import "../../style/footer.scss";
+import Logo from "../../assets/LogoKasa_white.svg";
 
 export class Footer extends Component {
   render() {

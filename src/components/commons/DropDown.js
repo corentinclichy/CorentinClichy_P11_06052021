@@ -1,14 +1,10 @@
 import React, { Component } from "react";
 
-import "../style/dropdown.scss";
+import "../../style/dropdown.scss";
 
 export class DropDown extends Component {
   constructor(props) {
     super(props);
-    this.title = this.props.title;
-    this.isDescription = this.props.isDescription;
-    this.description = this.props.description;
-    this.equipments = this.props.equipments;
     this.state = { isOpen: false, height: "0px" };
     this.content = React.createRef();
   }
@@ -24,21 +20,24 @@ export class DropDown extends Component {
   }
 
   render() {
-    let description;
-    let name;
+    let descriptionMarkup;
+    let nameMarkup;
 
-    if (this.isDescription) {
-      description = <p>{this.props.description}</p>;
-      this.title === undefined ? (name = "Description") : (name = this.title);
+    const { title, isDescription, description, equipments } = this.props;
+    const { isOpen, height } = this.state;
+
+    if (isDescription) {
+      descriptionMarkup = <p>{description}</p>;
+      title === undefined ? (nameMarkup = "Description") : (nameMarkup = title);
     } else {
-      description = (
+      descriptionMarkup = (
         <ul className="content__list">
-          {this.equipments.map((equipment) => (
+          {equipments.map((equipment) => (
             <li key={equipment}>{equipment}</li>
           ))}
         </ul>
       );
-      name = "Equipement";
+      nameMarkup = "Equipement";
     }
 
     return (
@@ -47,7 +46,7 @@ export class DropDown extends Component {
           className="dropdown__btn"
           onClick={() => this.handleDropdownClick()}
         >
-          <span>{name}</span>
+          <span>{nameMarkup}</span>
           <div className="btn__icon">
             <svg
               width="16"
@@ -55,7 +54,7 @@ export class DropDown extends Component {
               viewBox="0 0 16 10"
               fill="none"
               xmlns="http://www.w3.org/2000/svg"
-              className={!this.state.isOpen ? "" : "rotate"}
+              className={!isOpen && "rotate"}
             >
               <path
                 d="M1.3705 0.736755L0.0120851 2.10285L7.61003 9.69312L15.208 2.09518L13.8495 0.736756L7.61003 6.97628L1.3705 0.736755Z"
@@ -67,9 +66,9 @@ export class DropDown extends Component {
         <div
           className="dropdown__content"
           ref={this.content}
-          style={{ maxHeight: `${this.state.height}` }}
+          style={{ maxHeight: `${height}` }}
         >
-          {description}
+          {descriptionMarkup}
         </div>
       </div>
     );
