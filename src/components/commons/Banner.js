@@ -1,4 +1,6 @@
 import React, { Component } from "react";
+
+//Style
 import "../../style/banner.scss";
 
 export class Banner extends Component {

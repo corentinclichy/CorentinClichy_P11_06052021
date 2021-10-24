@@ -5,7 +5,6 @@ import NotationIcon from "./NotationIcon";
 export class Notation extends Component {
   render() {
     const { rating } = this.props;
-    console.log(rating);
 
     return (
       <div className="notation">

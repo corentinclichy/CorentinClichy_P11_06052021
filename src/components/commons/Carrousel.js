@@ -48,34 +48,42 @@ export class Carrousel extends Component {
             );
           })}
         </div>
-        <div className="chevron-left" onClick={() => this.goPreviousPicture()}>
-          <svg
-            width="16"
-            height="10"
-            viewBox="0 0 16 10"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              d="M1.3705 0.736755L0.0120851 2.10285L7.61003 9.69312L15.208 2.09518L13.8495 0.736756L7.61003 6.97628L1.3705 0.736755Z"
-              fill="white"
-            />
-          </svg>
-        </div>
-        <div className="chevron-right" onClick={() => this.goNextPicture()}>
-          <svg
-            width="16"
-            height="10"
-            viewBox="0 0 16 10"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              d="M1.3705 0.736755L0.0120851 2.10285L7.61003 9.69312L15.208 2.09518L13.8495 0.736756L7.61003 6.97628L1.3705 0.736755Z"
-              fill="white"
-            />
-          </svg>
-        </div>
+
+        {pictures.length > 1 && (
+          <>
+            <div
+              className="chevron-left"
+              onClick={() => this.goPreviousPicture()}
+            >
+              <svg
+                width="16"
+                height="10"
+                viewBox="0 0 16 10"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M1.3705 0.736755L0.0120851 2.10285L7.61003 9.69312L15.208 2.09518L13.8495 0.736756L7.61003 6.97628L1.3705 0.736755Z"
+                  fill="white"
+                />
+              </svg>
+            </div>
+            <div className="chevron-right" onClick={() => this.goNextPicture()}>
+              <svg
+                width="16"
+                height="10"
+                viewBox="0 0 16 10"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M1.3705 0.736755L0.0120851 2.10285L7.61003 9.69312L15.208 2.09518L13.8495 0.736756L7.61003 6.97628L1.3705 0.736755Z"
+                  fill="white"
+                />
+              </svg>
+            </div>
+          </>
+        )}
       </div>
     );
   }

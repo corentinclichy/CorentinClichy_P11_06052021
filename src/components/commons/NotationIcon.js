@@ -2,7 +2,6 @@ import React, { Component } from "react";
 
 export class NotationIcon extends Component {
   render() {
-    console.log(this.props);
     const { fill } = this.props;
 
     // check if rating is more than index, then add className 'fill'
