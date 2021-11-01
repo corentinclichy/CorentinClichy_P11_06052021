@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import "../../style/about.scss";
-import DropDown from "../commons/DropDown";
+import Collapse from "../commons/Collapse";
 
 export class About extends Component {
   constructor(props) {
@@ -24,22 +24,22 @@ export class About extends Component {
       <div className="about">
         <div className="about__image"></div>
         <div className="faq">
-          <DropDown
+          <Collapse
             isDescription
             title="Fiabilité"
             description={description.fiabilite}
           />
-          <DropDown
+          <Collapse
             isDescription
             title="Respect"
             description={description.respect}
           />
-          <DropDown
+          <Collapse
             isDescription
             title="Service"
             description={description.service}
           />
-          <DropDown
+          <Collapse
             isDescription
             title="Responsabilité"
             description={description.responsabilite}

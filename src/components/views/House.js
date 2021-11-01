@@ -2,8 +2,8 @@ import React, { Component } from "react";
 import { Redirect } from "react-router-dom";
 
 import Tag from "../commons/Tag";
-import Carrousel from "../commons/Carrousel";
-import Dropdown from "../commons/DropDown";
+import Gallery from "../commons/Gallery";
+import Collapse from "../commons/Collapse";
 import Notation from "../commons/Notation";
 
 import "../../style/house.scss";
@@ -45,7 +45,7 @@ export class House extends Component {
     return (
       <div className="house">
         <div className="house__image">
-          <Carrousel pictures={pictures} />
+          <Gallery pictures={pictures} />
         </div>
         <div className="house__infos-wrapper">
           <div className="house__infos">
@@ -74,8 +74,8 @@ export class House extends Component {
         </div>
 
         <div className="house__dropdown-container">
-          <Dropdown equipments={equipments} />
-          <Dropdown isDescription description={description} />
+          <Collapse equipments={equipments} />
+          <Collapse isDescription description={description} />
         </div>
       </div>
     );

@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import "../../style/carrousel.scss";
 
-export class Carrousel extends Component {
+export class Gallery extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -89,4 +89,4 @@ export class Carrousel extends Component {
   }
 }
 
-export default Carrousel;
+export default Gallery;

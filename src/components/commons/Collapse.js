@@ -2,7 +2,7 @@ import React, { Component } from "react";
 
 import "../../style/dropdown.scss";
 
-export class DropDown extends Component {
+export class Collapse extends Component {
   constructor(props) {
     super(props);
     this.state = { isOpen: false, height: "0px" };
@@ -54,7 +54,7 @@ export class DropDown extends Component {
               viewBox="0 0 16 10"
               fill="none"
               xmlns="http://www.w3.org/2000/svg"
-              className={!isOpen && "rotate"}
+              className={!isOpen ? "rotate" : ""}
             >
               <path
                 d="M1.3705 0.736755L0.0120851 2.10285L7.61003 9.69312L15.208 2.09518L13.8495 0.736756L7.61003 6.97628L1.3705 0.736755Z"
@@ -75,4 +75,4 @@ export class DropDown extends Component {
   }
 }
 
-export default DropDown;
+export default Collapse;
